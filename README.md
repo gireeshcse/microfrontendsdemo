@@ -98,3 +98,21 @@ Now, go to mf2 add the below config to wepack.config.js
 import Footer from "mf1/Footer";
 import Header from "mf1/Header";
 ```
+
+#### Atomic Design
+
+* Atoms
+
+These are small components like button, input field etc..
+
+* Molecules
+
+Slightly larger components which uses Atoms
+
+* Organisms
+
+* Templates
+
+* Pages
+
+#### Module Federation
