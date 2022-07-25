@@ -116,3 +116,11 @@ Slightly larger components which uses Atoms
 * Pages
 
 #### Module Federation
+
+
+Creating static asset ad update remote in mf2
+```
+npm run build
+cd dist
+PORT=3000 npx servor
+```
