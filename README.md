@@ -49,3 +49,52 @@ Next steps:
 ▶️ npm start
 
 ```
+
+#### Configuring components to expose 
+
+* Go to wepack.config.js
+
+* Update the plugins configuratiions for ModuleFedrationPlugin as belwo
+
+```
+new ModuleFederationPlugin({
+      name: "mf1",
+      filename: "remoteEntry.js",
+      remotes: {},
+      exposes: {
+        "./Header":"./src/Header.jsx",
+        "./Footer":"./src/Footer.jsx",
+      },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: deps["react-dom"],
+        },
+      },
+}),
+
+```
+* Restart the app.
+
+* Now following is added which is manifest of all the components exposed
+
+```
+http://localhost:3001/remoteEntry.js
+```
+
+Now, go to mf2 add the below config to wepack.config.js
+
+* Restart the app.(mf2)
+
+
+* Now we can import the modules
+
+```
+import Footer from "mf1/Footer";
+import Header from "mf1/Header";
+```
